@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Project/PlayerInputActions.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Project/Scripts/PlayerInputActions.inputactions'
 
 using System;
 using System.Collections;
@@ -100,6 +100,61 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Arrow"",
+                    ""id"": ""d27c6306-c16d-4d95-b027-f08d34c75dab"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""a7e9b712-c45f-46a2-ae4f-8fed9cec853a"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""68181b6f-c655-426f-af99-2f5d7401c74f"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""c2704fba-415e-446e-8747-22205f5de9b4"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""26339fc1-a28f-4c17-aa32-da25b99c013e"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""9aec968a-135a-444f-8f23-c41d21935a4c"",
                     ""path"": ""<Keyboard>/e"",
@@ -122,6 +177,203 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Monster"",
+            ""id"": ""3f65fa4d-71ff-4a03-bd88-f62dbd4322da"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""a1d0d16e-c372-4a76-b571-130f1063db87"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""12054879-8971-41ac-b343-3e69b3038163"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""75a487ae-2862-44a0-b893-b0985bc3e968"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""d4ec3567-1106-40a7-9776-90d60a622b65"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""196032c3-eb81-4924-a21d-5ded67b676e3"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""5e5147ac-9b1e-4891-aad7-447b84697a81"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b88b6506-12e3-4fe0-8305-3f74ea5342c3"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""e4cf03b4-ef30-44f7-a3d3-6fa1cb78fb3e"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Arrow"",
+                    ""id"": ""532533a8-73d1-48a1-adad-a2243e408ec9"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""122e6421-cb98-424e-8d3c-6804cdfb909b"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""fa8d4c37-ea78-4b1c-abb5-9285fc2e4fd9"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""46ae3851-9fb0-40df-9b7d-aae79e55f916"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""c35522cc-263f-494d-8a57-b6c52d1c3750"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""92a3b612-39c5-4680-aae9-939c5d04dfd7"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""82898a29-b5ef-43cd-9823-42d98a5d3ed8"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e999a31-07d4-4a7a-8b23-4b38d267a687"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""30607b4a-066d-4884-9b9e-616c885354f4"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61b53b80-b1ac-4bc7-8b0a-65ad4decbf3d"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -131,6 +383,11 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
+        // Monster
+        m_Monster = asset.FindActionMap("Monster", throwIfNotFound: true);
+        m_Monster_Movement = m_Monster.FindAction("Movement", throwIfNotFound: true);
+        m_Monster_Sprint = m_Monster.FindAction("Sprint", throwIfNotFound: true);
+        m_Monster_Attack = m_Monster.FindAction("Attack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -225,10 +482,65 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Monster
+    private readonly InputActionMap m_Monster;
+    private IMonsterActions m_MonsterActionsCallbackInterface;
+    private readonly InputAction m_Monster_Movement;
+    private readonly InputAction m_Monster_Sprint;
+    private readonly InputAction m_Monster_Attack;
+    public struct MonsterActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public MonsterActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_Monster_Movement;
+        public InputAction @Sprint => m_Wrapper.m_Monster_Sprint;
+        public InputAction @Attack => m_Wrapper.m_Monster_Attack;
+        public InputActionMap Get() { return m_Wrapper.m_Monster; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MonsterActions set) { return set.Get(); }
+        public void SetCallbacks(IMonsterActions instance)
+        {
+            if (m_Wrapper.m_MonsterActionsCallbackInterface != null)
+            {
+                @Movement.started -= m_Wrapper.m_MonsterActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_MonsterActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_MonsterActionsCallbackInterface.OnMovement;
+                @Sprint.started -= m_Wrapper.m_MonsterActionsCallbackInterface.OnSprint;
+                @Sprint.performed -= m_Wrapper.m_MonsterActionsCallbackInterface.OnSprint;
+                @Sprint.canceled -= m_Wrapper.m_MonsterActionsCallbackInterface.OnSprint;
+                @Attack.started -= m_Wrapper.m_MonsterActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_MonsterActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_MonsterActionsCallbackInterface.OnAttack;
+            }
+            m_Wrapper.m_MonsterActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
+            }
+        }
+    }
+    public MonsterActions @Monster => new MonsterActions(this);
     public interface IPlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
+    }
+    public interface IMonsterActions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
 }

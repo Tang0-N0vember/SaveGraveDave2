@@ -100,6 +100,9 @@ public class PlayerInputSystem : MonoBehaviour
     private void OnDisable()
     {
         playerInputActions.Player.Disable();
+        playerInputActions.Player.Movement.performed -= Movement_performed;
+        playerInputActions.Player.Interact.performed -= Movement_Interact;
+        playerInputActions.Player.Inventory.performed -= Inventory_performed;
     }
     private void Movement_performed(InputAction.CallbackContext context)
     {
