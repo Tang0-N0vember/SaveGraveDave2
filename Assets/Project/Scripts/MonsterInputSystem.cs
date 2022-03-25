@@ -18,14 +18,15 @@ public class MonsterInputSystem : MonoBehaviour
     Vector3 horizontalMovement;
 
     [SerializeField] float moveSpeed = 5f;
+    [SerializeField] float sprintSpeed = 10f;
+    private float currenSpeed;
     [SerializeField] float rotationSpeed = 360f;
-    [SerializeField] Transform rotatePlayerPoint;
-
-    public GameObject currentGrave;
+    [SerializeField] float sprintTime=2f;
+    [SerializeField] int monsterHealth = 50;
+    [SerializeField] int monsterDamage = 10;
+    [SerializeField] GameObject rotatePlayerPoint;
 
     public bool isInvetoryOpen = false;
-
-    
 
     private void Awake()
     {
@@ -33,7 +34,8 @@ public class MonsterInputSystem : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
         Cursor.visible = isInvetoryOpen;
-
+        currenSpeed = moveSpeed;
+        sprintSpeed = moveSpeed * 3;
 
         playerInputActions = new PlayerInputActions();
         
@@ -44,6 +46,10 @@ public class MonsterInputSystem : MonoBehaviour
         playerInputActions.Monster.Enable();
         playerInputActions.Monster.Movement.performed += Movement_performed;
         playerInputActions.Monster.Attack.performed += Attack_performed;
+        playerInputActions.Monster.Attack.canceled += Attack_canceled;
+        playerInputActions.Monster.Sprint.performed += Sprint_performed;
+        playerInputActions.Monster.Sprint.canceled += Sprint_canceled;
+
 
     }
     private void OnDisable()
@@ -51,30 +57,46 @@ public class MonsterInputSystem : MonoBehaviour
         playerInputActions.Player.Disable();
         playerInputActions.Player.Movement.performed -= Movement_performed;
         playerInputActions.Player.Movement.performed -= Attack_performed;
+        playerInputActions.Monster.Attack.canceled -= Attack_canceled;
+        playerInputActions.Monster.Sprint.performed -= Sprint_performed;
+        playerInputActions.Monster.Sprint.canceled -= Sprint_canceled;
     }
 
     private void Attack_performed(InputAction.CallbackContext context)
     {
         animator.SetTrigger("Attack");
+        rotatePlayerPoint.GetComponent<BoxCollider>().enabled=true;
+    }
+    private void Attack_canceled(InputAction.CallbackContext context)
+    {
+        rotatePlayerPoint.GetComponent<BoxCollider>().enabled = false;
     }
 
     private void Movement_performed(InputAction.CallbackContext context)
     {
         inputMovement = context.ReadValue<Vector2>();
     }
+    private void Sprint_performed(InputAction.CallbackContext context)
+    {
+        currenSpeed=sprintSpeed;
+    }
+    private void Sprint_canceled(InputAction.CallbackContext context)
+    {
+        currenSpeed = moveSpeed;
+    }
 
-    
+
     private void Update()
     {
         
         inputMovement = playerInputActions.Monster.Movement.ReadValue<Vector2>();
         horizontalMovement = (transform.right * inputMovement.x + transform.forward * inputMovement.y);
-        characterController.Move(horizontalMovement * moveSpeed * Time.deltaTime);
+        characterController.Move(horizontalMovement * currenSpeed * Time.deltaTime);
 
         if (horizontalMovement != Vector3.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(horizontalMovement, Vector3.up);
-            rotatePlayerPoint.rotation = Quaternion.RotateTowards(rotatePlayerPoint.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            rotatePlayerPoint.transform.rotation = Quaternion.RotateTowards(rotatePlayerPoint.transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
     }
     private void FixedUpdate()
@@ -88,6 +110,14 @@ public class MonsterInputSystem : MonoBehaviour
         {
             Debug.Log("Villager");
         }
+    }
+    public void TakeDamage(int damage)
+    {
+        monsterHealth -= damage;
+    }
+    public int GetMonsterDamage()
+    {
+        return monsterDamage;
     }
 
 }

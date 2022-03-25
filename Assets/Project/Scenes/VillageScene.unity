@@ -793,6 +793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 474225676}
   - component: {fileID: 474225677}
+  - component: {fileID: 474225678}
   m_Layer: 0
   m_Name: RotatePlayer
   m_TagString: Untagged
@@ -828,6 +829,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 1, z: 1}
+--- !u!114 &474225678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474225675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411d2188d66133e4a87dece1c91340f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &525630148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1301,7 +1314,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.2585003, y: 0.000000018583464, z: -0.000000004972852, w: 0.9660112}
+  m_LocalRotation: {x: 0.29237214, y: 0.000000016454543, z: -0.000000005030667, w: 0.95630467}
   m_LocalPosition: {x: 0, y: 4.94, z: -5.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1453,7 +1466,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434585282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1690469635}
@@ -1627,7 +1640,7 @@ GameObject:
   - component: {fileID: 1690469634}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1663,6 +1676,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   headSize: 1
+  bodySize: 2
+  armSize: 1
+  legSize: 1
   monsterHead: {fileID: 6002713812088224990}
   monsterBody: {fileID: 6002713812088224930}
   monsterArmLeft: {fileID: 6002713812088224960}
@@ -1699,9 +1715,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+  sprintSpeed: 8
   rotationSpeed: 360
-  rotatePlayerPoint: {fileID: 474225676}
-  currentGrave: {fileID: 0}
+  sprintTime: 2
+  monsterHealth: 50
+  monsterDamage: 10
+  rotatePlayerPoint: {fileID: 474225675}
   isInvetoryOpen: 0
 --- !u!1 &1760184254 stripped
 GameObject:
@@ -2049,7 +2068,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911196531}
-  m_LocalRotation: {x: 0.2585003, y: 0.000000018583464, z: -0.000000004972852, w: 0.9660112}
+  m_LocalRotation: {x: 0.29237214, y: 0.000000016454543, z: -0.000000005030667, w: 0.95630467}
   m_LocalPosition: {x: 0, y: 4.94, z: -5.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2440,6 +2459,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Guard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712281325268108179, guid: fccb7e5ed79154dd4aa6a7c91b56a98d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fccb7e5ed79154dd4aa6a7c91b56a98d, type: 3}

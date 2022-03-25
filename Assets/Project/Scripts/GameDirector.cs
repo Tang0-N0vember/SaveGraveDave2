@@ -12,8 +12,8 @@ public class GameDirector : MonoBehaviour
     public int headCount, bodyCount, armCount, legCount;
     private void Awake()
     {
-        if (instance == null) instance = this; else if (instance != this) Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
+        //if (instance == null) instance = this; else if (instance != this) Destroy(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     public void LoadVillageSzene()
@@ -39,10 +39,9 @@ public class GameDirector : MonoBehaviour
 
             }
             //Debug.Log(item.stackSize);
-
-            //headCount = inventory.
-            SceneManager.LoadScene(3);
+            
         }
+        SceneManager.LoadScene(3);
     }
     public int GetHeadCount()
     {

@@ -365,7 +365,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""61b53b80-b1ac-4bc7-8b0a-65ad4decbf3d"",
-                    ""path"": ""<Keyboard>/shift"",
+                    ""path"": ""<Keyboard>/rightShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

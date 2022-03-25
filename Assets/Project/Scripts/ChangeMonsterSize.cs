@@ -5,6 +5,9 @@ using UnityEngine;
 public class ChangeMonsterSize : MonoBehaviour
 {
     [SerializeField] float headSize;
+    [SerializeField] float bodySize;
+    [SerializeField] float armSize;
+    [SerializeField] float legSize;
 
     [SerializeField] GameObject monsterHead;
     [SerializeField] GameObject monsterBody;
@@ -15,10 +18,16 @@ public class ChangeMonsterSize : MonoBehaviour
 
     private void Awake()
     {
-        headSize = GameDirector.instance.GetHeadCount()+1;
+        //headSize = GameDirector.instance.GetHeadCount()+1;
     }
     private void Update()
     {
-        monsterHead.transform.localScale=Vector3.one*headSize;
+        monsterBody.transform.localScale = Vector3.one * bodySize;
+        monsterHead.transform.localScale=Vector3.one*headSize/bodySize;
+        monsterArmLeft.transform.localScale = Vector3.one * armSize / bodySize;
+        monsterArmRight.transform.localScale = Vector3.one * armSize / bodySize;
+        monsterLegLeft.transform.localScale = Vector3.one * legSize;
+        monsterLegRight.transform.localScale = Vector3.one * legSize;
+
     }
 }
