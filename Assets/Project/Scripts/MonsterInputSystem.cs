@@ -82,5 +82,12 @@ public class MonsterInputSystem : MonoBehaviour
         animator.SetFloat("VelocityZ", inputMovement.y);
         animator.SetFloat("VelocityX", inputMovement.x);
     }
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.CompareTag("Villager"))
+        {
+            Debug.Log("Villager");
+        }
+    }
 
 }

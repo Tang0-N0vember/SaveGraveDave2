@@ -137,6 +137,14 @@ public class PlayerInputSystem : MonoBehaviour
             inInteractableCollider = true;
             //collider.GetComponent<Grave>().OpenGrave();
         }
+        if (collider.GetComponent<ICollectible>() != null)
+        {
+            ICollectible collectible = collider.GetComponent<ICollectible>();
+            if (collectible != null)
+            {
+                collectible.Collect();
+            }
+        }
     }
     private void OnTriggerExit(Collider collider)
     {
@@ -145,6 +153,7 @@ public class PlayerInputSystem : MonoBehaviour
             currentGrave = null;
             inInteractableCollider = false; 
         }
+        
     }
 
     public void OpenCloseInventory()
