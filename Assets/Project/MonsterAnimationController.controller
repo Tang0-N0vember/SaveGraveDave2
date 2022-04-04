@@ -213,7 +213,7 @@ BlendTree:
     m_Motion: {fileID: 1827226128182048838, guid: 1d0d7087f4b340e4499466b9ec8128d7,
       type: 3}
     m_Threshold: 0.25
-    m_Position: {x: 1, y: 0}
+    m_Position: {x: 2, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: VelocityZ
