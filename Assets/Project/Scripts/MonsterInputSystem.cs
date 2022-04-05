@@ -27,6 +27,13 @@ public class MonsterInputSystem : MonoBehaviour
     [SerializeField] GameObject rotatePlayerPoint;
 
     public bool isInvetoryOpen = false;
+    private bool isSprinting = false;
+
+
+    [SerializeField] private int maxStamina = 100;
+    private int currentStatmina;
+    [SerializeField] private int useStamina = 5;
+    [SerializeField] private float regenTime = 1;
 
     private void Awake()
     {
@@ -78,11 +85,11 @@ public class MonsterInputSystem : MonoBehaviour
     }
     private void Sprint_performed(InputAction.CallbackContext context)
     {
-        currenSpeed=sprintSpeed;
+        isSprinting = true;
     }
     private void Sprint_canceled(InputAction.CallbackContext context)
     {
-        currenSpeed = moveSpeed;
+        isSprinting = false;
     }
 
 
@@ -92,6 +99,21 @@ public class MonsterInputSystem : MonoBehaviour
         inputMovement = playerInputActions.Monster.Movement.ReadValue<Vector2>();
         horizontalMovement = (transform.right * inputMovement.x + transform.forward * inputMovement.y);
         characterController.Move(horizontalMovement * currenSpeed * Time.deltaTime);
+
+        if (isSprinting)
+        {
+            
+            if (currentStatmina - useStamina >= 0)
+            {
+                currentStatmina -= useStamina;
+                currenSpeed = sprintSpeed;
+            }
+            
+        }
+        else
+        {
+            currenSpeed = moveSpeed;
+        }
 
         if (horizontalMovement != Vector3.zero)
         {
@@ -119,5 +141,9 @@ public class MonsterInputSystem : MonoBehaviour
     {
         return monsterDamage;
     }
-
+    private IEnumerator RegenStamina()
+    {
+        yield return new WaitForSeconds(regenTime);
+    }
+    
 }

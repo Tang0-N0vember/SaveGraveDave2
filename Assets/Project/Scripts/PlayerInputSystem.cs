@@ -33,6 +33,9 @@ public class PlayerInputSystem : MonoBehaviour
 
     public bool isInvetoryOpen = false;
 
+
+    
+
     
 
     private void Awake()
@@ -173,4 +176,5 @@ public class PlayerInputSystem : MonoBehaviour
             playerInputActions.Player.Interact.Enable();
         }
     }
+    
 }
